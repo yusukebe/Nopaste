@@ -1,0 +1,7 @@
+% layout 'default';
+% title $entry->title;
+
+<div id="entry">
+<h2><%= $entry->title %></h2>
+<pre><%== $code %></pre>
+</div>

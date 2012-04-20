@@ -1,0 +1,32 @@
+body
+{
+  margin:10px 0 40px 0;
+}
+h1 { font-weight:bold; }
+h1 a:link, h1 a:visited { text-decoration:none; color:#000; }
+input[type="text"] 
+{
+  width:800px;
+  padding:.8em;
+}
+textarea
+{
+  width:800px;
+  height:300px;
+  padding:.8em;
+  font-size:12px;
+  font-family: Monaco,Courier,"DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+}
+pre
+{
+  width:800px;
+  background-color:#efefef;
+  padding:1em;
+  font-size:13px;
+  line-height:19px;
+  border:1px solid #bbb;
+  font-family: Monaco,Courier,"DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+}
+#footer { margin-top:20px; padding-top:20px; border-top:1px solid #ccc; }
+#caution { color:red; }
+#entry h2 { font-size:22px; margin:10px 0; }
