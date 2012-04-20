@@ -1,7 +1,6 @@
 package Nopaste::Web::Root;
 use Mojo::Base 'Mojolicious::Controller';
 use FormValidator::Lite;
-FormValidator::Lite->load_constraints(qw/Japanese/);
 use HTML::FillInForm::Lite;
 use Data::GUID::URLSafe;
 use Text::VimColor;
@@ -47,10 +46,12 @@ sub entry {
     my $self = shift;
     my $entry = $self->app->db->single('entry',{ id => $self->stash->{id} });
     unless( $entry ){
-        $self->render_not_found;
+        return $self->render_not_found;
     }
-
-    my $syntax = Text::VimColor->new( filetype=> 'perl', string => encode_utf8($entry->body) );
+    my $syntax = Text::VimColor->new(
+        filetype => 'perl',
+        string   => encode_utf8( $entry->body )
+    );
     $self->stash->{code} = decode_utf8($syntax->html);
     $self->stash->{entry} = $entry;
 }
